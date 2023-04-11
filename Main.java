@@ -10,7 +10,21 @@ public class Main {
 
     public static ArrayList<Toy> awaitingIssuance = new ArrayList<>();
     
-    public static void main() {}      
+    public static void main(String[] args) {
+        Robot r1 = new Robot("Iron man", 5, "On the body");
+        Robot r2 = new Robot("Max", 1, "On the body");
+
+        Doll d1 = new Doll("Эльза", 7, "Articulated");
+
+        Constructor c1 = new Constructor("Magic Castle", 3, 6739, "High");
+
+        System.out.println(r1);
+        System.out.println(r2);
+
+        System.out.println(d1);
+
+        System.out.println(c1);
+    }      
         
 
     public static void play() {} 

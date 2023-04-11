@@ -5,9 +5,9 @@ public class Constructor extends Toy {
     private int numberOfDetails;
     private String complexity;
 
-    public Constructor(String type, String name, int quantity, float toyDropRate, int numberOfDetails,
+    public Constructor(String name, int quantity, int numberOfDetails,
             String complexity) {
-        super(type, name, quantity, toyDropRate);
+        super("Конструктор", name, quantity, 0.2f);
         this.numberOfDetails = numberOfDetails;
         this.complexity = complexity;
     }
