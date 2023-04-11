@@ -1,4 +1,4 @@
-package toys_game;
+package toys_game.Unit;
 
 import java.util.UUID;
 

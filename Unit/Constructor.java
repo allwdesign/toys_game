@@ -1,4 +1,4 @@
-package toys_game;
+package toys_game.Unit;
 
 public class Constructor extends Toy {
 
