@@ -15,11 +15,11 @@ public class Model {
     }
 
     public void add(Toy toy) {
-        Model.allToys.add(toy);
+        allToys.add(toy);
     }
 
     public void delete(Toy toy) {
-        Model.allToys.remove(toy);
+        allToys.remove(toy);
     }
 
     public void savePlayResultToFile() {
