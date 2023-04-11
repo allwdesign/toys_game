@@ -4,8 +4,8 @@ public class Doll extends Toy {
 
     private String features;
 
-    public Doll(String type, String name, int quantity, float toyDropRate, String features) {
-        super(type, name, quantity, toyDropRate);
+    public Doll(String name, int quantity, String features) {
+        super("Кукла", name, quantity, 0.6f);
         this.features = features;
     }
 

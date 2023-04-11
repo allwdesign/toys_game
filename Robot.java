@@ -4,8 +4,8 @@ public class Robot extends Toy {
 
     private String controlType;
 
-    public Robot(String type, String name, int quantity, float toyDropRate, String controlType) {
-        super(type, name, quantity, toyDropRate);
+    public Robot(String name, int quantity, String controlType) {
+        super("Робот", name, quantity, 0.2f);
         this.controlType = controlType;
     }
 
