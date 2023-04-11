@@ -1,5 +1,6 @@
 package toys_game;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import toys_game.Unit.Toy;
@@ -20,6 +21,18 @@ public class View {
 
     public void displayToyDescription(Toy toy) {
         System.out.println(toy);
+    }
+
+    public void displayAllToys(ArrayList<Toy> data) {
+        if (data.isEmpty()){
+            System.out.println("---------------Список игрушек пуст---------------");
+        } else {
+            System.out.println("---------------Cписок игрушек---------------");
+            
+            for (int i = 0; i < data.size(); i++) {
+                System.out.println(data.get(i).toString());
+            }
+        }
     }
 
     public void displayToyDispense(Toy toy) {

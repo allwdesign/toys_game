@@ -1,7 +1,5 @@
 package toys_game;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import toys_game.Unit.Constructor;
@@ -16,8 +14,10 @@ public class Main {
     public static void main(String[] args) {
 
         View consoleView = new View();
+        Model model = new Model("toys.txt");
+
         consoleView.view();
-        
+
         Robot r1 = new Robot("Iron man", 5, "On the body");
         Robot r2 = new Robot("Max", 1, "On the body");
 
@@ -30,22 +30,24 @@ public class Main {
         consoleView.displayToyDescription(d1);
         consoleView.displayToyDescription(c1);
 
+        model.add(r1);
+        model.add(r2);
+        model.add(d1);
+        model.add(c1);
+
+        consoleView.displayAllToys(Model.allToys);
+
+        model.savePlayResultToFile();
+
+        model.delete(r1);
+        model.delete(r2);
+        model.delete(d1);
+        model.delete(c1);
+
+        consoleView.displayAllToys(Model.allToys);
     }
 
     public static void play() {
     }
 
-    public static void savePlayResultToFile() {
-        FileWriter fileWriter = null;
-
-        try {
-            fileWriter = new FileWriter("toys.txt");
-            // Добавляет в файл данные
-            fileWriter.append("Toys");
-            fileWriter.flush();
-        } catch (IOException e) {
-            // Выведет в консоль сообщение об исключении
-            System.out.println(e.getMessage());
-        }
-    }
 }
