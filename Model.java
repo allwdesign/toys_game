@@ -18,23 +18,32 @@ public class Model {
         allToys.add(toy);
     }
 
-    public void delete(Toy toy) {
+    public void delete(int idx) {
+        allToys.remove(idx);
+    }
+    public void deleteByToy(Toy toy) {
         allToys.remove(toy);
     }
 
-    public void savePlayResultToFile() {
+    public Integer size() {
+        return allToys.size();
+    }
+    public Toy getToyByIdx(int idx) {
+        return allToys.get(idx);
+        
+    }
+
+
+    public void savePlayResultToFile(Toy toy) {
         FileWriter fileWriter = null;
 
         try {
             fileWriter = new FileWriter(this.path);
-            // Добавляет в файл данные
-            for (int i = 0; i < allToys.size(); i++) {
-                fileWriter.append(allToys.get(i).toString() + "\n");
-            }
-
+            // Adds data to a file
+            fileWriter.append(toy.toString() + "\n");
             fileWriter.flush();
         } catch (IOException e) {
-            // Выведет в консоль сообщение об исключении
+            // Prints an exception message to the console
             System.out.println(e.getMessage());
         }
     }
