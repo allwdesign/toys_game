@@ -2,14 +2,13 @@ package toys_game.Unit;
 
 import java.util.UUID;
 
-public abstract class Toy {
+public abstract class Toy implements ShopInterface{
 
     private String uid;
     private String type;
     private String name;
     private int quantity;
     private float toyDropRate;
-    protected static int toyCnt;
 
     public Toy(String type, String name, int quantity, float toyDropRate) {
         this.uid = UUID.randomUUID().toString();
@@ -17,10 +16,6 @@ public abstract class Toy {
         this.name = name;
         this.quantity = quantity;
         this.toyDropRate = toyDropRate;
-    }
-
-    static {
-        toyCnt = 0;
     }
     
     public float getToyDropRate() {
@@ -31,6 +26,14 @@ public abstract class Toy {
         this.toyDropRate = toyDropRate;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return String.format("ID: %s. Тип: %s. Название игрушки: %s. Количество: %s. Частота выпадения: %s",
@@ -39,6 +42,14 @@ public abstract class Toy {
                 name, 
                 quantity,
                 toyDropRate);
+    }
+    
+    @Override
+    public String getInfo() {
+        return String.format("Количество(шт): %s. Тип: %s. Название игрушки: %s.",
+        quantity,
+        type, 
+        name);
     }
 
 }

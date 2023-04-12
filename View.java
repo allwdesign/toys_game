@@ -12,11 +12,13 @@ public class View {
     public void view() {
 
         in = new Scanner(System.in);
+        System.out.println("***************************************************************");
         System.out.println("Добро пожаловать на розыгрыш призов!");
+        System.out.println("***************************************************************");
         System.out.println("Нажмите Enter чтобы начать.");
         in.nextLine();
         System.out.println("Формируем список игрушек для выдачи.");
-
+        System.out.println("***************************************************************");
     }
 
     public void displayToyDescription(Toy toy) {
@@ -35,11 +37,23 @@ public class View {
         }
     }
 
-    public void displayToyDispense(Toy toy) {
-        System.out.printf("Вы получаете в качестве приза: %s", toy);
+    public void displayToyQuantity(Toy toy, int awSize, int mSize) {
+        System.out.println("***************************************************************");
+        System.out.printf("Осталось %s\n", toy.getInfo());
+
+        System.out.printf("Ожидают выдачи: %s шт.\n", awSize);
+        System.out.printf("Всего осталось: %s шт.\n", mSize);
+        System.out.println("***************************************************************");
     }
 
-    public void displayToyQuantity(Toy toy) {
-        System.out.printf("Осталось %s  игрушек на складе.", toy);
+    public void displayBeforeSetQuantity(int quantity) {
+        System.out.println("***************************************************************");
+        System.out.printf("Было %s шт.\n", quantity);
+    }
+
+    public void displayWin(Toy toy) {
+        System.out.println("***************************************************************");
+        System.out.printf("Вы выиграли  %s игрушку.\n", toy);
+        System.out.println("***************************************************************");
     }
 }

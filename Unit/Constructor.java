@@ -12,4 +12,11 @@ public class Constructor extends Toy {
         this.complexity = complexity;
     }
 
+    @Override
+    public String getInfo() {
+        String str = super.getInfo() + " Сложность: " + this.complexity + ". Количество деталей: "
+                + this.numberOfDetails + ".";
+        return str;
+    }
+
 }

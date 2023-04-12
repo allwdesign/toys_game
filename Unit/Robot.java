@@ -9,4 +9,10 @@ public class Robot extends Toy {
         this.controlType = controlType;
     }
 
+    @Override
+    public String getInfo() {
+        String str = super.getInfo() + " Управление: " + this.controlType + ".";
+        return str;
+    }
+
 }

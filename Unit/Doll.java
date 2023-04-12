@@ -9,4 +9,10 @@ public class Doll extends Toy {
         this.features = features;
     }
 
+    @Override
+    public String getInfo() {
+        String str = super.getInfo() + " Особенности: " + this.features + ".";
+        return str;
+    }
+
 }
